@@ -62,6 +62,7 @@ preference-agreement rate and Gwet's AC1.
 
 ## License
 
-**TBD — set before making the repository public.** Suggested: Apache-2.0 for code
-(`empath/`) and CC-BY-4.0 for data (`results/`, `human_eval/`). Confirm the
-copyright holder (author / MindSurf) before release.
+- **Code** (`empath/`): Apache-2.0 — see [`LICENSE`](LICENSE).
+- **Data** (`results/`, `human_eval/`): CC-BY-4.0 — see [`LICENSE-DATA-CC-BY-4.0.txt`](LICENSE-DATA-CC-BY-4.0.txt).
+
+© 2026 Camilo Chacón Sartori and MindSurf.
