@@ -5,7 +5,7 @@
 Author: **Camilo Chacón Sartori** ([ORCID 0000-0002-8543-9893](https://orcid.org/0000-0002-8543-9893)) — MindSurf.
 
 Companion artifact to the paper *"EMPATH: A Multilingual Auditor–Judge Benchmark
-for Safety Evaluation of Emotional-Support Chatbots"* (arXiv: TBD).
+for Safety Evaluation of Emotional-Support Chatbots"* (arXiv: [2606.30256](https://arxiv.org/abs/2606.30256)).
 
 ## Contents
 
@@ -54,7 +54,7 @@ preference-agreement rate and Gwet's AC1.
                    Evaluation of Emotional-Support Chatbots},
   author        = {Chac\'on Sartori, Camilo},
   year          = {2026},
-  eprint        = {TBD},
+  eprint        = {2606.30256},
   archivePrefix = {arXiv},
   primaryClass  = {cs.CL}
 }
