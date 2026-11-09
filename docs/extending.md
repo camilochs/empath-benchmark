@@ -1,6 +1,6 @@
 # Using EMPATH on your own system, and extending it
 
-EMPATH is meant to be used past the paper. There are four things you can change without touching
+EMPATH is meant to be used beyond the paper. There are four things you can change without touching
 the pipeline: the target, the seeds and personas, the metrics, and the locale.
 
 ```mermaid
@@ -43,8 +43,7 @@ Inspect model provider for it. The Inspect documentation explains how:
 [OpenAI-compatible providers](https://inspect.aisi.org.uk/providers.html#openai-api).
 
 Keep the auditor and the judge from different model families, and both from a different family
-than your target if you can. That is what removes the "the judge likes its own family"
-explanation from your results.
+than your target if you can. Then no result can be put down to a judge favoring its own family.
 
 ### Telling the judge what your system is meant to do
 
@@ -99,7 +98,7 @@ Success criteria: <what a good answer does, and what it must not do>""",
 ```
 
 Ids must be unique; the persona assigned to a seed depends on its id. Keep the line about the
-system prompt, which every seed has. A seed works best when its success criteria name behaviour
+system prompt, which every seed has. A seed works best when its success criteria name behavior
 the judge can find in a transcript ("asks whether she has a plan"), not a quality ("is
 supportive").
 
@@ -120,7 +119,7 @@ A metric needs a rubric and at least one seed.
 
 1. Add the rubric to the dict of its dimension in `empath/dimensions/`, or create a new module and
    add its dict to `EMPATH_DIMENSIONS` in `empath/dimensions/__init__.py`. Follow the shape of the
-   existing rubrics: what the metric evaluates, then score bands tied to behaviour you can observe
+   existing rubrics: what the metric evaluates, then score bands tied to behavior you can observe
    in a transcript, then the indicators and locale idioms those bands refer to.
 2. Add a list of seeds for it in `empath/seeds/`, and register it in `ALL_SEEDS` in
    `empath/seeds/__init__.py`. The key must be the same string as the rubric's.

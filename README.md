@@ -16,7 +16,7 @@ scored one reply at a time. The risk in these conversations shows up somewhere e
 detects a crisis at turn 2 and has forgotten it by turn 8. EMPATH is the instrument I built to
 test that. One model plays the user across a whole conversation, in Mexican Spanish or US
 English. A second model scores the transcript on 19 metrics. The new metrics and their rubrics
-came out of blind ratings and notes by two practising psychologists.
+came out of blind ratings and notes by two practicing psychologists.
 
 This repository has the full instrument, the processed results behind every number in the
 paper, and the anonymized data from the clinician study.
@@ -36,12 +36,13 @@ flowchart LR
 Every evaluation starts from a seed. A seed names the metric under test, the locale, and what a
 good answer looks like. A persona is attached to it deterministically: age, family, economic
 situation, the way that person writes. The auditor gets both and holds a conversation with the
-target. It can send messages, roll the conversation back to an earlier turn and try another
-path, and end it. It has no tool to change the target's system message, so the target answers
-with whatever configuration its provider gives it. The judge then reads the user–target transcript
-and gives a score from 1 to 10 on the metric the seed was written for. Its prompt asks for
-numbered verbatim quotes first and a justification that cites them by number. Quotes,
-justification and score are all kept in the log.
+target. It can send messages, go back to an earlier turn to try another path, and end the
+conversation. It cannot change the target's system message, so the target answers with whatever
+configuration its provider gives it.
+
+The judge then reads the transcript and scores it from 1 to 10 on the metric the seed was written
+for. Its prompt asks first for numbered verbatim quotes, then for a justification that cites them
+by number. Quotes, justification and score all stay in the log.
 
 Auditor and judge come from different model families, so no target is scored only by its own
 family. The judge runs at temperature 0. The auditor and the target run at their providers'
@@ -81,7 +82,7 @@ E = introduced in EMPATH, M = consolidated from an earlier internal instrument f
 emotional-support systems, P = inherited from [Petri](https://github.com/safety-research/petri).
 
 Each rubric lives in `empath/dimensions/` as plain text: four score bands tied to observable
-behaviour, the indicators those bands refer to, and the locale idioms that count. The
+behavior, the indicators those bands refer to, and the locale idioms that count. The
 crisis rubric, for instance, lists "ya no puedo más" and "quiero desaparecer" next to "I can't
 take it anymore", and asks for Línea de la Vida or SAPTEL in Mexico and 988 in the US.
 
@@ -154,9 +155,9 @@ uv run inspect eval empath/tasks/empath_auditor_task.py@empath_auditor_task \
 
 I checked that these arguments select the same 19 seeds that appear in the paper's run logs
 (`seed-crisis-det-es-001` through `seed-referral-es-001`). The other two targets were
-`anthropic/claude-opus-4-7` and `openai-api/deepseek/deepseek-v4-pro`. The second form is how
-Inspect reaches any OpenAI-compatible endpoint: it reads `DEEPSEEK_API_KEY` and
-`DEEPSEEK_BASE_URL` from the environment.
+`anthropic/claude-opus-4-7` and `openai-api/deepseek/deepseek-v4-pro`. A name of the form
+`openai-api/<service>/<model>` reaches any OpenAI-compatible endpoint; for this one Inspect reads
+`DEEPSEEK_API_KEY` and `DEEPSEEK_BASE_URL` from the environment.
 
 Some useful variations:
 
@@ -166,10 +167,9 @@ Some useful variations:
 - Leaving out `max_samples` runs all 140 seeds.
 - `-T personas_enabled=false` runs the seeds without personas.
 
-To evaluate your own product rather than a bare model, point `target` at its API through an
-Inspect model provider. The harness adds no system prompt of its own, so the target runs with
-whatever configuration it has in production. [docs/extending.md](docs/extending.md) covers
-this, and how to add seeds, personas, metrics or a new locale.
+To evaluate your own product, point `target` at its API through an Inspect model provider. It
+will run with the configuration it has in production. [docs/extending.md](docs/extending.md)
+shows how, and how to add seeds, personas, metrics or a new locale.
 
 Every run writes an `.eval` log under `logs/`. `uv run inspect view` opens a browser viewer with
 each conversation, the auditor's moves, and the judge's quotes and justification.
