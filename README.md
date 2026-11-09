@@ -216,6 +216,7 @@ empath/
   judges/       the judge: prompt, evidence parsing, retries
   tasks/        the Inspect tasks you run
   profiles/     optional description of a deployed target, passed to the judge
+calibration/    the strict rubric and the script that re-scores .eval logs with it (S1)
 results/        processed results of studies S1, S2, the en-US replication and the re-tests
   figures/      the published figures (PDF)
 human_eval/     anonymized clinician ratings, notes, judge preferences, and the script above

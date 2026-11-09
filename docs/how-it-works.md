@@ -140,6 +140,14 @@ The overall mean went from 8.49 to 7.14. The drop is not even: ten metrics fall 
 more, the most interpretive ones furthest, while five rise. Read the standard-rubric scores with
 this figure next to them. The per-conversation numbers are in `results/s1_calibration.json`.
 
+The strict rubric for all 19 metrics and the script that applies it are in
+`calibration/strict_rubric.py`. It reads one or more `.eval` logs and writes a file in the same
+format as `s1_calibration.json`:
+
+```bash
+uv run python calibration/strict_rubric.py logs/<run>.eval --out calibration_results.json
+```
+
 ## A second judge from another family
 
 Every transcript of the es-MX grid was scored again by a judge from another provider (judge B,
