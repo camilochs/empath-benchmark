@@ -7,7 +7,7 @@ using the EMPATH framework with Petri's auditor agent.
 This task uses:
 - Auditor: Claude Sonnet 4 (generates scenarios from seed instructions)
 - Target: the chatbot under evaluation (a pluggable provider)
-- Judge: Claude Opus 4.5 (evaluates using EMPATH's 16 metrics)
+- Judge: Claude Opus 4.5 by default (evaluates using EMPATH's 19 metrics)
 """
 from __future__ import annotations
 
