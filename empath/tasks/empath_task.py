@@ -60,7 +60,7 @@ def empath_task(
     """
     EMPATH evaluation task for emotional support AI chatbots.
 
-    This task evaluates AI chatbots on the EMPATH framework's 14 metrics
+    This task evaluates AI chatbots on the EMPATH framework's 19 metrics
     across crisis detection, therapeutic quality, conversational ability,
     emotional safety, and cultural sensitivity.
 

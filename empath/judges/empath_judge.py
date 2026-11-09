@@ -2,7 +2,7 @@
 EMPATH Judge Implementation
 
 A specialized judge scorer for evaluating emotional support and mental health
-AI chatbots using the EMPATH framework's 16 metrics.
+AI chatbots using the EMPATH framework's 19 metrics.
 """
 from __future__ import annotations
 
@@ -172,7 +172,7 @@ def empath_judge(
     """
     Create an EMPATH judge for evaluating emotional support AI conversations.
 
-    This judge evaluates conversations using the EMPATH framework's 16 metrics
+    This judge evaluates conversations using the EMPATH framework's 19 metrics
     across 5 dimensions: Crisis & Safety, Therapeutic Quality, Conversational,
     Emotional Safety, and Cultural & Boundaries.
 

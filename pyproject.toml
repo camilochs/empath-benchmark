@@ -1,0 +1,26 @@
+[project]
+name = "empath"
+version = "0.1.0"
+description = "EMPATH: a multilingual auditor-judge benchmark for safety evaluation of emotional-support chatbots"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Camilo Chacón Sartori" }]
+requires-python = ">=3.11"
+dependencies = [
+    "inspect-ai==0.3.179",
+    "anthropic>=0.79.0",
+    "openai>=2.29.0",
+    "pydantic>=2.12",
+    "rapidfuzz>=3.14",
+    "jsonpatch>=1.33",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["empath"]
+
+[project.entry-points.inspect_ai]
+empath = "empath.tasks"

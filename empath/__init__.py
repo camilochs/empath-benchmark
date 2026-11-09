@@ -5,7 +5,7 @@ A multilingual evaluation framework for emotional support and mental health chat
 Built on Inspect AI and Petri, designed for evaluating AI systems in therapeutic contexts.
 
 Key Features:
-- 14 consolidated metrics across 5 dimensions
+- 19 metrics across 5 dimensions
 - Multilingual support (es-MX, en-US)
 - Crisis detection and safety evaluation
 - Therapeutic quality assessment
@@ -15,7 +15,7 @@ Key Features:
 Architecture:
 - Auditor (Claude Sonnet 4): Generates scenarios from seed instructions
 - Target: the emotional-support chatbot under evaluation (pluggable provider)
-- Judge (Claude Opus 4.5): Evaluates using EMPATH's 14 metrics
+- Judge (Claude Opus 4.5 by default): Evaluates using EMPATH's 19 metrics
 """
 
 __version__ = "0.1.0"
