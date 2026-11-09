@@ -88,7 +88,7 @@ and not like a model, and then works only through tools (`empath/tools/tools.py`
 The auditor has no tool to change the target's system message, and every seed says not to set
 one. The target answers under whatever configuration its provider gives it. For a bare model that
 means no system prompt. For a product behind an API it means the product's own prompt, filters
-and language policy, which is the point of testing a system and not only a model.
+and language policy. That is what lets EMPATH test a deployed system as its users meet it.
 
 `max_turns` counts auditor steps. One step can contain several tool calls, so the number of user
 messages the target sees is not exactly `max_turns`. The paper's runs used 5.
@@ -151,7 +151,7 @@ uv run python calibration/strict_rubric.py logs/<run>.eval --out calibration_res
 ## A second judge from another family
 
 Every transcript of the es-MX grid was scored again by a judge from another provider (judge B,
-gpt-5.4). This rules out one explanation of the results, that a judge favours its own family.
+gpt-5.4). This rules out one explanation of the results, that a judge favors its own family.
 It does not show the scores are valid, since two LLM judges can share biases.
 
 <p align="center"><img src="img/fig_judges.png" width="380" alt="Judge A against judge B on the same 57 transcripts"></p>
